@@ -25,9 +25,7 @@ export class SatCat extends Array {
    * @return {SatCatHandler} The SatCat data as a handler object.
    */
   static async fromLocalFile(pathToSatCatFile) {
-    const fs = require('fs');
-    const util = require('util');
-    const readFile = util.promisify(fs.readFile);
+    const {readFile} = require('fs/promises');
     try {
       const satCatData = await readFile(pathToSatCatFile);
       return new SatCat(JSON.parse(satCatData));
