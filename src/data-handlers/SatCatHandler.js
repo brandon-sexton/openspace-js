@@ -28,8 +28,12 @@ export class SatCat extends Array {
     const fs = require('fs');
     const util = require('util');
     const readFile = util.promisify(fs.readFile);
-    const satCatData = await readFile(pathToSatCatFile, 'utf8');
-    return new SatCat(JSON.parse(satCatData));
+    try {
+      const satCatData = await readFile(pathToSatCatFile);
+      return new SatCat(JSON.parse(satCatData));
+    } catch (err) {
+      throw new Error(`Error reading file: ${err.message}`);
+    }
   }
 
   /**
