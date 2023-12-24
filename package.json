@@ -1,0 +1,35 @@
+{
+  "name": "openspace-js",
+  "version": "0.1.0",
+  "description": "astrodynamics library",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandon-sexton/openspace-js.git"
+  },
+  "keywords": [
+    "astro",
+    "astrodynamics",
+    "space",
+    "orbital",
+    "mechanics"
+  ],
+  "author": "Brandon Sexton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brandon-sexton/openspace-js/issues"
+  },
+  "homepage": "https://github.com/brandon-sexton/openspace-js#readme",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "unit-conversions-js": "^0.1.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.6",
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
