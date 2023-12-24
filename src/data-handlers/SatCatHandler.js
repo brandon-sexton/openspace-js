@@ -22,7 +22,7 @@ export class SatCat extends Array {
   /**
    * Loads the SatCat data from a local file.
    * @param {string} pathToSatCatFile - The path to the SatCat file.
-   * @return {Promise<SatCatHandler>} The SatCat data as a handler object.
+   * @return {SatCatHandler} The SatCat data as a handler object.
    */
   static async fromLocalFile(pathToSatCatFile) {
     const fs = require('fs');
