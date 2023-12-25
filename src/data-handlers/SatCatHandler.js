@@ -1,4 +1,3 @@
-
 /**
  * Represents a SatCat.
  */
@@ -24,14 +23,9 @@ export class SatCat extends Array {
    * @param {string} pathToSatCatFile - The path to the SatCat file.
    * @return {SatCatHandler} The SatCat data as a handler object.
    */
-  static async fromLocalFile(pathToSatCatFile) {
-    const {readFile} = require('fs/promises');
-    try {
-      const satCatData = await readFile(pathToSatCatFile);
-      return new SatCat(JSON.parse(satCatData));
-    } catch (err) {
-      throw new Error(`Error reading file: ${err.message}`);
-    }
+  static fromJSON(pathToSatCatFile) {
+    const data = require(pathToSatCatFile);
+    return new SatCat(data);
   }
 
   /**
