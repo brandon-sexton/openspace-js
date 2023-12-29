@@ -29,6 +29,20 @@ export class SatCat extends Array {
   }
 
   /**
+   * Loads the SatCat data from a URL.
+   * @param {string} url - The URL to the SatCat data.
+   * @return {SatCat} The SatCat data as a handler object.
+   * @example
+   * // Loads the SatCat data from the Celestrak website.
+   * const handler = SatCat.fromURL('https://celestrak.com/satcat/tle.php?CATNR=25544');
+   */
+  static fromURL(url) {
+    return fetch(url)
+        .then((response) => response.json())
+        .then((data) => new SatCat(data));
+  }
+
+  /**
    * Filters the SatCat data by object types.
    * @param {Array<string>} objectTypes - The object types to filter by.
    * @return {SatCat} The filtered SatCat data.
